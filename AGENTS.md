@@ -12,14 +12,14 @@
 
 ## 2. 结构与接线
 
-| 位置 | 约定 |
-| --- | --- |
-| `src/App.tsx` | 新页面必须同时登记路由与菜单；受权限保护的页面套 `RequirePermission` |
-| `src/app/navigation.ts` | 一级路由在 `navigation`，分组归属在 `navigationGroups` |
-| `src/app/app-layout.tsx` | 外壳接线只做接线：菜单、顶栏操作、用户菜单、设置弹窗 |
-| `src/app/session.ts` | 演示会话；接真实身份服务时替换实现，保持 `AppSession` 形状 |
-| `src/lib/i18n.ts` | 先合并组件库的 `shellZh` / `shellEn`，本应用文案覆盖同名 key |
-| `src/lib/shortcuts.ts` | 默认快捷键登记表，传给 `UserSettings.shortcutDefaults` |
+| 位置                     | 约定                                                                 |
+| ------------------------ | -------------------------------------------------------------------- |
+| `src/App.tsx`            | 新页面必须同时登记路由与菜单；受权限保护的页面套 `RequirePermission` |
+| `src/app/navigation.ts`  | 一级路由在 `navigation`，分组归属在 `navigationGroups`               |
+| `src/app/app-layout.tsx` | 外壳接线只做接线：菜单、顶栏操作、用户菜单、设置弹窗                 |
+| `src/app/session.ts`     | 演示会话；接真实身份服务时替换实现，保持 `AppSession` 形状           |
+| `src/lib/i18n.ts`        | 先合并组件库的 `shellZh` / `shellEn`，本应用文案覆盖同名 key         |
+| `src/lib/shortcuts.ts`   | 默认快捷键登记表，传给 `UserSettings.shortcutDefaults`               |
 
 ## 3. 数据与演示
 
