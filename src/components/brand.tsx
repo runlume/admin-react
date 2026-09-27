@@ -1,4 +1,4 @@
-import { cn } from '@/lib/utils'
+import { cn } from '@runlume/admin-ui/lib/utils'
 
 /**
  * 品牌标识。直接复用平台控制台 public/brand 下的资源，不另建图片；

@@ -5,7 +5,7 @@ import { I18nextProvider, useTranslation } from 'react-i18next'
 import { App } from '@/App'
 import { printBrandBanner } from '@/lib/brand-console'
 import i18n from '@/lib/i18n'
-import { AdminUiProvider } from '@/lib/use-ui-translation'
+import { AdminUiProvider } from '@runlume/admin-ui/lib/use-ui-translation'
 import '@/index.css'
 
 printBrandBanner()

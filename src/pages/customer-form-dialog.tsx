@@ -3,7 +3,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { z } from 'zod'
-import { Button } from '@/components/ui/button'
+import { Button } from '@runlume/admin-ui/ui/button'
 import {
   Dialog,
   DialogContent,
@@ -11,11 +11,11 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { NativeSelect } from '@/components/ui/native-select'
-import { Textarea } from '@/components/ui/textarea'
+} from '@runlume/admin-ui/ui/dialog'
+import { Input } from '@runlume/admin-ui/ui/input'
+import { Label } from '@runlume/admin-ui/ui/label'
+import { NativeSelect } from '@runlume/admin-ui/ui/native-select'
+import { Textarea } from '@runlume/admin-ui/ui/textarea'
 import type { Customer } from '@/pages/sample-data'
 
 const schema = z.object({

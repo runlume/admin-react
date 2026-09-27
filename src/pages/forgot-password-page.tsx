@@ -2,10 +2,11 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import { KeyRound, MailCheck } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { AuthHeading, AuthLayout } from '@/components/auth-layout'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
+import { AuthHeading } from '@runlume/admin-ui/components/auth-layout'
+import { AppAuthLayout as AuthLayout } from '@/components/app-auth-layout'
+import { Button } from '@runlume/admin-ui/ui/button'
+import { Input } from '@runlume/admin-ui/ui/input'
+import { Label } from '@runlume/admin-ui/ui/label'
 
 /**
  * 示例找回密码页：提交账号后进入“已发送”态，不真正发信。

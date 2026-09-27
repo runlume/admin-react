@@ -1,4 +1,4 @@
-import { storageKey } from '@/lib/storage-key'
+import { storageKey } from '@runlume/admin-ui/lib/storage-key'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 

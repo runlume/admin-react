@@ -1,4 +1,5 @@
-import { storageKey } from '@/lib/storage-key'
+import { storageKey } from '@runlume/admin-ui/lib/storage-key'
+import { shellEn, shellZh } from '@runlume/admin-ui/lib/shell-messages'
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
 
@@ -1261,7 +1262,11 @@ try {
 void i18n.use(initReactI18next).init({
   lng: language,
   fallbackLng: 'zh-CN',
-  resources: { 'zh-CN': { translation: zhResources }, en: { translation: en } },
+  // 外壳与标准页型的文案在组件库里维护；这里只覆盖本应用要改写的取值。
+  resources: {
+    'zh-CN': { translation: { ...shellZh, ...zhResources } },
+    en: { translation: { ...shellEn, ...en } },
+  },
   interpolation: { escapeValue: false },
 })
 

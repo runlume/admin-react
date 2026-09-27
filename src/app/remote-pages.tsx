@@ -1,7 +1,7 @@
 /* oxlint-disable react/static-components -- 动态组件来自模块级缓存，引用稳定，不会重置状态 */
 import { Suspense, lazy, useMemo, type ComponentType } from 'react'
 import { useTranslation } from 'react-i18next'
-import { ErrorState, LoadingState } from '@/components/page'
+import { ErrorState, LoadingState } from '@runlume/admin-ui/components/page'
 
 /**
  * 动态路由的组件表。

@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { CountTo } from '@/components/count-to'
-import { Sparkline } from '@/components/sparkline'
-import { Trend } from '@/components/trend'
-import { CodeBlock } from '@/components/code-block'
-import { Button } from '@/components/ui/button'
-import { Progress } from '@/components/ui/progress'
-import { ColumnChart } from '@/components/column-chart'
+import { CountTo } from '@runlume/admin-ui/components/count-to'
+import { Sparkline } from '@runlume/admin-ui/components/sparkline'
+import { Trend } from '@runlume/admin-ui/components/trend'
+import { CodeBlock } from '@runlume/admin-ui/components/code-block'
+import { Button } from '@runlume/admin-ui/ui/button'
+import { Progress } from '@runlume/admin-ui/ui/progress'
+import { ColumnChart } from '@runlume/admin-ui/components/column-chart'
 import {
   BarList,
   DonutChart,
@@ -15,7 +15,7 @@ import {
   Heatmap,
   LineChart,
   RadarChart,
-} from '@/components/charts'
+} from '@runlume/admin-ui/components/charts'
 import { Section, DesignHeader } from './section'
 
 const metrics = [

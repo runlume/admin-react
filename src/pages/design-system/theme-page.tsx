@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
-import { AccessibilitySettings } from '@/components/accessibility-settings'
-import { ColorSettings } from '@/components/color-settings'
-import { NotificationSettings } from '@/components/notification-settings'
-import { NotificationsButton } from '@/components/notifications-button'
+import { AccessibilitySettings } from '@runlume/admin-ui/components/accessibility-settings'
+import { ColorSettings } from '@runlume/admin-ui/components/color-settings'
+import { NotificationSettings } from '@runlume/admin-ui/components/notification-settings'
+import { NotificationsButton } from '@runlume/admin-ui/components/notifications-button'
 import { Section, DesignHeader } from './section'
 
 /** 主题与设置：配色、通知偏好、无障碍与顶栏入口。 */
@@ -19,7 +19,7 @@ export function DesignThemePage() {
           <NotificationSettings />
           <div className="flex items-center gap-3 rounded-lg border bg-card p-3">
             <span className="text-sm text-muted-foreground">顶栏通知入口</span>
-            <NotificationsButton />
+            <NotificationsButton unread={3} />
           </div>
         </Section>
         <Section

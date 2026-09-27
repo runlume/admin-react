@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import { storageKey } from '@/lib/storage-key'
-import type { PermissionCode } from '@/lib/permissions'
+import { storageKey } from '@runlume/admin-ui/lib/storage-key'
+import type { PermissionCode } from '@runlume/admin-ui/lib/permissions'
 
 /**
  * 示例会话：两个不同角色的测试账号。接真实身份服务时，

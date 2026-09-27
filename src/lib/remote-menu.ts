@@ -11,8 +11,8 @@ import {
   normalizeRequirement,
   type PermissionCode,
   type PermissionRequirement,
-} from './permissions'
-import type { NavigationLinkTarget } from './navigation'
+} from '@runlume/admin-ui/lib/permissions'
+import type { NavigationLinkTarget } from '@runlume/admin-ui/lib/navigation'
 
 export type RemoteMenuGroup = {
   id: string

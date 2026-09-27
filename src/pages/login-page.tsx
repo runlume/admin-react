@@ -10,11 +10,12 @@ import {
   useSession,
   type DemoRole,
 } from '@/app/session'
-import { AuthHeading, AuthLayout } from '@/components/auth-layout'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Label } from '@/components/ui/label'
-import { safeRedirect } from '@/lib/redirect'
+import { AuthHeading } from '@runlume/admin-ui/components/auth-layout'
+import { AppAuthLayout as AuthLayout } from '@/components/app-auth-layout'
+import { Button } from '@runlume/admin-ui/ui/button'
+import { Input } from '@runlume/admin-ui/ui/input'
+import { Label } from '@runlume/admin-ui/ui/label'
+import { safeRedirect } from '@runlume/admin-ui/lib/redirect'
 
 /**
  * 示例登录页：表单、必填校验与错误状态。

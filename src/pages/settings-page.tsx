@@ -1,12 +1,12 @@
 import { useState } from 'react'
 import { Accessibility, Info, Palette } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { PageHeader } from '@/components/page'
-import { AccessibilitySettings } from '@/components/accessibility-settings'
-import { ColorSettings } from '@/components/color-settings'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { AboutPanel } from '@/components/about-panel'
-import { cn } from '@/lib/utils'
+import { PageHeader } from '@runlume/admin-ui/components/page'
+import { AccessibilitySettings } from '@runlume/admin-ui/components/accessibility-settings'
+import { ColorSettings } from '@runlume/admin-ui/components/color-settings'
+import { Card, CardContent, CardHeader, CardTitle } from '@runlume/admin-ui/ui/card'
+import { AppAbout } from '@/components/app-about'
+import { cn } from '@runlume/admin-ui/lib/utils'
 
 const sections = [
   { id: 'appearance', icon: Palette, label: '外观' },
@@ -75,7 +75,7 @@ export function SettingsPage() {
           {active === 'about' && (
             <Card>
               <CardContent>
-                <AboutPanel />
+                <AppAbout />
               </CardContent>
             </Card>
           )}

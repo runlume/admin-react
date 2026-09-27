@@ -4,36 +4,40 @@ import type { ColumnDef } from '@tanstack/react-table'
 import { CheckCheck, Eye, MailOpen, Trash2 } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
-import { DataTable } from '@/components/data-table'
-import { ListModule } from '@/components/list-module'
-import { SearchActions, SearchField, SearchFilters } from '@/components/search-filters'
-import { FilterButton } from '@/components/filter-button'
-import { RowActions } from '@/components/row-actions'
-import { BulkActions } from '@/components/bulk-actions'
-import { TableCellOverflow } from '@/components/table-cell-overflow'
-import { TimeAgo } from '@/components/time-ago'
-import { PageHeader } from '@/components/page'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
+import { DataTable } from '@runlume/admin-ui/components/data-table'
+import { ListModule } from '@runlume/admin-ui/components/list-module'
+import {
+  SearchActions,
+  SearchField,
+  SearchFilters,
+} from '@runlume/admin-ui/components/search-filters'
+import { FilterButton } from '@runlume/admin-ui/components/filter-button'
+import { RowActions } from '@runlume/admin-ui/components/row-actions'
+import { BulkActions } from '@runlume/admin-ui/components/bulk-actions'
+import { TableCellOverflow } from '@runlume/admin-ui/components/table-cell-overflow'
+import { TimeAgo } from '@runlume/admin-ui/components/time-ago'
+import { PageHeader } from '@runlume/admin-ui/components/page'
+import { Badge } from '@runlume/admin-ui/ui/badge'
+import { Button } from '@runlume/admin-ui/ui/button'
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-} from '@/components/ui/dialog'
-import { DropdownMenuItem } from '@/components/ui/dropdown-menu'
-import { Input } from '@/components/ui/input'
-import { NativeSelect } from '@/components/ui/native-select'
-import { DateRangeInput } from '@/components/ui/date-range-input'
-import type { DateRange } from '@/lib/range'
+} from '@runlume/admin-ui/ui/dialog'
+import { DropdownMenuItem } from '@runlume/admin-ui/ui/dropdown-menu'
+import { Input } from '@runlume/admin-ui/ui/input'
+import { NativeSelect } from '@runlume/admin-ui/ui/native-select'
+import { DateRangeInput } from '@runlume/admin-ui/ui/date-range-input'
+import type { DateRange } from '@runlume/admin-ui/lib/range'
 import {
   notificationCategories,
   unreadCount,
   useNotifications,
   type AppNotification,
 } from '@/lib/notifications'
-import { cn } from '@/lib/utils'
+import { cn } from '@runlume/admin-ui/lib/utils'
 
 const readStates = ['all', 'unread', 'read'] as const
 type ReadState = (typeof readStates)[number]

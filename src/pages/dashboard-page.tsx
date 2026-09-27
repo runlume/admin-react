@@ -1,12 +1,12 @@
 import { Link } from 'react-router'
 import { ArrowUpRight, ClipboardList, UsersRound, Wallet } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { PageHeader } from '@/components/page'
-import { CountTo } from '@/components/count-to'
-import { Sparkline } from '@/components/sparkline'
-import { Trend } from '@/components/trend'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
-import { StatusBadge } from '@/components/status-badge'
+import { PageHeader } from '@runlume/admin-ui/components/page'
+import { CountTo } from '@runlume/admin-ui/components/count-to'
+import { Sparkline } from '@runlume/admin-ui/components/sparkline'
+import { Trend } from '@runlume/admin-ui/components/trend'
+import { Card, CardContent, CardHeader, CardTitle } from '@runlume/admin-ui/ui/card'
+import { StatusBadge } from '@runlume/admin-ui/components/status-badge'
 import { customers, orders } from '@/pages/sample-data'
 
 /** 工作台：标准后台的默认落地页，指标 → 待办 → 快捷入口。 */

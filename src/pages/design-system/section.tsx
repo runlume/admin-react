@@ -1,8 +1,8 @@
 import type { ReactNode } from 'react'
 import { useTranslation } from 'react-i18next'
-import { Card, CardContent, CardDescription, CardHeader } from '@/components/ui/card'
-import { cn } from '@/lib/utils'
-import { PageHeader } from '@/components/page'
+import { Card, CardContent, CardDescription, CardHeader } from '@runlume/admin-ui/ui/card'
+import { cn } from '@runlume/admin-ui/lib/utils'
+import { PageHeader } from '@runlume/admin-ui/components/page'
 
 /** 组件总览各页共用的卡片分组。 */
 export function Section({

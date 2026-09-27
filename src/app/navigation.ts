@@ -13,7 +13,7 @@ import {
   Smile,
   UsersRound,
 } from 'lucide-react'
-import type { NavigationGroupDefinition, NavigationItem } from '@/lib/navigation'
+import type { NavigationGroupDefinition, NavigationItem } from '@runlume/admin-ui/lib/navigation'
 
 /**
  * 示例菜单。业务系统在这里替换成自己的菜单：

@@ -1,14 +1,23 @@
 import { useEffect, useState } from 'react'
 import { useLocation, useNavigate, useNavigationType } from 'react-router'
-import { PAGE_RELOAD_PATH } from '@/components/page-reload-button'
-import { ConsoleLayout } from '@/components/console-layout'
-import { UserMenu } from '@/components/user-menu'
-import { UserSettings } from '@/components/user-settings'
-import { PageReloadButton } from '@/components/page-reload-button'
-import { NotificationsButton } from '@/components/notifications-button'
-import { groupNavigation } from '@/lib/navigation'
-import { useAppearance } from '@/lib/appearance'
-import { readShortcuts, useDefaultShortcuts, type ShortcutSetting } from '@/lib/preset-shortcuts'
+import { PAGE_RELOAD_PATH } from '@runlume/admin-ui/components/page-reload-button'
+import { ConsoleLayout } from '@runlume/admin-ui/components/console-layout'
+import { UserMenu } from '@runlume/admin-ui/components/user-menu'
+import { UserSettings } from '@runlume/admin-ui/components/user-settings'
+import { PageReloadButton } from '@runlume/admin-ui/components/page-reload-button'
+import { NotificationsButton } from '@runlume/admin-ui/components/notifications-button'
+import { Brand } from '@/components/brand'
+import { brandInfo } from '@/lib/brand-info'
+import { unreadCount, useNotifications } from '@/lib/notifications'
+import { appShortcuts } from '@/lib/shortcuts'
+import { AboutPanel } from '@runlume/admin-ui/components/about-panel'
+import { groupNavigation } from '@runlume/admin-ui/lib/navigation'
+import { useAppearance } from '@runlume/admin-ui/lib/appearance'
+import {
+  readShortcuts,
+  useDefaultShortcuts,
+  type ShortcutSetting,
+} from '@runlume/admin-ui/lib/preset-shortcuts'
 import type { AppMenu } from '@/app/remote-menu'
 import { signOut as endSession, type DemoAccount } from '@/app/session'
 
@@ -52,7 +61,8 @@ export function AppLayout({ menu, account }: { menu: AppMenu; account: DemoAccou
     '/notifications': 'notifications.title',
   }
   const [shortcuts, setShortcuts] = useState<ShortcutSetting[]>(readShortcuts)
-  useDefaultShortcuts((path) => void navigate(path), shortcuts)
+  const unread = useNotifications((state) => unreadCount(state.items))
+  useDefaultShortcuts((path) => void navigate(path), shortcuts, appShortcuts)
   useEffect(() => {
     const sync = () => setShortcuts(readShortcuts())
     window.addEventListener('shortcuts-changed', sync)
@@ -70,10 +80,12 @@ export function AppLayout({ menu, account }: { menu: AppMenu; account: DemoAccou
         navigation={menu.navigation}
         groups={menu.groups}
         title="Runlume 标准后台"
+        brand={<Brand className="w-32" />}
+        repositoryUrl={brandInfo.repository}
         favoritesKey={account.role}
         headerActions={{
           reload: <PageReloadButton />,
-          notifications: <NotificationsButton />,
+          notifications: <NotificationsButton unread={unread} />,
         }}
         pageTitles={pageTitles}
         fallbackTitle="sample.dashboardTitle"
@@ -89,6 +101,17 @@ export function AppLayout({ menu, account }: { menu: AppMenu; account: DemoAccou
       />
       <UserSettings
         shortcuts={shortcuts}
+        shortcutDefaults={appShortcuts}
+        aboutContent={
+          <AboutPanel
+            title={`${brandInfo.product} 控制台`}
+            description={`由 ${brandInfo.name} 标准后台生成，业务页面在本仓库实现。`}
+            brandName={brandInfo.name}
+            brandUrl={brandInfo.site}
+            docsUrl={brandInfo.sites.docs}
+            repositoryUrl={brandInfo.repository}
+          />
+        }
         onShortcutsChange={(next) => {
           setShortcuts(next)
           window.dispatchEvent(new Event('shortcuts-changed'))

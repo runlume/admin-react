@@ -1,7 +1,7 @@
 import type { ColumnDef } from '@tanstack/react-table'
 import { useTranslation } from 'react-i18next'
-import { DataTable } from '@/components/data-table'
-import { PageHeader } from '@/components/page'
+import { DataTable } from '@runlume/admin-ui/components/data-table'
+import { PageHeader } from '@runlume/admin-ui/components/page'
 import { auditLogs, type AuditLog } from '@/pages/sample-data'
 
 /**

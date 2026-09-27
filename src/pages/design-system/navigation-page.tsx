@@ -2,9 +2,9 @@ import { useState } from 'react'
 import { Link } from 'react-router'
 import { ArrowRight, Search } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Steps } from '@/components/steps'
-import { PreferencesMenu } from '@/components/preferences-menu'
-import { Kbd, KbdGroup } from '@/components/ui/kbd'
+import { Steps } from '@runlume/admin-ui/components/steps'
+import { PreferencesMenu } from '@runlume/admin-ui/components/preferences-menu'
+import { Kbd, KbdGroup } from '@runlume/admin-ui/ui/kbd'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -12,9 +12,9 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb'
-import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+} from '@runlume/admin-ui/ui/breadcrumb'
+import { Button } from '@runlume/admin-ui/ui/button'
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@runlume/admin-ui/ui/tabs'
 import { Section, DesignHeader } from './section'
 
 const pageLinks = [

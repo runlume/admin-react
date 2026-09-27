@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Ban, ShieldCheck } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { toast } from 'sonner'
-import { Alert } from '@/components/ui/alert'
+import { Alert } from '@runlume/admin-ui/ui/alert'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -13,10 +13,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@/components/ui/alert-dialog'
-import { Button } from '@/components/ui/button'
-import { ConfirmDialog } from '@/components/confirm-dialog'
-import { MultiStepLoader } from '@/components/multi-step-loader'
+} from '@runlume/admin-ui/ui/alert-dialog'
+import { Button } from '@runlume/admin-ui/ui/button'
+import { ConfirmDialog } from '@runlume/admin-ui/components/confirm-dialog'
+import { MultiStepLoader } from '@runlume/admin-ui/components/multi-step-loader'
 import {
   ContextMenu,
   ContextMenuContent,
@@ -24,9 +24,9 @@ import {
   ContextMenuLabel,
   ContextMenuSeparator,
   ContextMenuTrigger,
-} from '@/components/ui/context-menu'
-import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
-import { Avatar } from '@/components/ui/avatar'
+} from '@runlume/admin-ui/ui/context-menu'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@runlume/admin-ui/ui/hover-card'
+import { Avatar } from '@runlume/admin-ui/ui/avatar'
 import {
   Dialog,
   DialogContent,
@@ -35,7 +35,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
+} from '@runlume/admin-ui/ui/dialog'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -43,7 +43,7 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from '@runlume/admin-ui/ui/dropdown-menu'
 import {
   Sheet,
   SheetContent,
@@ -52,11 +52,11 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from '@/components/ui/sheet'
-import { Skeleton } from '@/components/ui/skeleton'
-import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
-import { EmptyState, ErrorState, LoadingState } from '@/components/page'
-import { Can, RequirePermission } from '@/components/permission'
+} from '@runlume/admin-ui/ui/sheet'
+import { Skeleton } from '@runlume/admin-ui/ui/skeleton'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@runlume/admin-ui/ui/tooltip'
+import { EmptyState, ErrorState, LoadingState } from '@runlume/admin-ui/components/page'
+import { Can, RequirePermission } from '@runlume/admin-ui/components/permission'
 import { Section, DesignHeader } from './section'
 
 /** 反馈与浮层：提示条、弹窗、抽屉、确认、菜单、状态与提示消息。 */

@@ -1,8 +1,8 @@
 import { ExternalLink } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { PageHeader } from '@/components/page'
-import { Alert } from '@/components/ui/alert'
-import { Button } from '@/components/ui/button'
+import { PageHeader } from '@runlume/admin-ui/components/page'
+import { Alert } from '@runlume/admin-ui/ui/alert'
+import { Button } from '@runlume/admin-ui/ui/button'
 
 /**
  * 内嵌外链页面：后台菜单里 `target: 'iframe'` 的项落到这里，

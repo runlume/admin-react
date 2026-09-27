@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from 'react'
 import { navigation as localNavigation, navigationGroups as localGroups } from '@/app/navigation'
-import { resolveNavIcon } from '@/lib/nav-icons'
-import type { NavigationGroupDefinition, NavigationItem } from '@/lib/navigation'
-import type { PermissionCode } from '@/lib/permissions'
+import { resolveNavIcon } from '@runlume/admin-ui/lib/nav-icons'
+import type { NavigationGroupDefinition, NavigationItem } from '@runlume/admin-ui/lib/navigation'
+import type { PermissionCode } from '@runlume/admin-ui/lib/permissions'
 import {
   normalizeRemoteMenu,
   remoteRoutes,
