@@ -23,6 +23,18 @@ export default defineConfig(({ mode }) => {
       alias: {
         '@': fileURLToPath(new URL('./src', import.meta.url)),
       },
+      // 组件库用 link: 指向源码仓库时，它会从自己的 node_modules 解析这些包，
+      // 于是 React 出现两份、hooks 直接报 Invalid hook call。这里统一收敛到本应用的副本。
+      dedupe: [
+        'react',
+        'react-dom',
+        'react-router',
+        'react-router-dom',
+        'i18next',
+        'react-i18next',
+        'zustand',
+        'sonner',
+      ],
     },
     // host: true 让终端同时打印 Local 与 Network 地址，手机或同网段设备可直接访问。
     server: { host: true, port: 3200, strictPort: true },
