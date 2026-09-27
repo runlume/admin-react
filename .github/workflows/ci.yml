@@ -9,6 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          path: admin-react
+      # 组件库 0.3.0 还没发到 npm，锁文件里的 overrides 指向 link:../admin-ui，
+      # 所以 CI 也要取同版本的组件库源码并现构建一份。发布 0.3.0 之后，
+      # 删掉这一步与下面的 build:lib（连同仓库里的 overrides），安装即走注册表。
+      - uses: actions/checkout@v4
+        with:
+          repository: runlume/admin-ui
+          path: admin-ui
+
       - uses: pnpm/action-setup@v4
         with:
           version: 11.21.0
@@ -16,15 +26,29 @@ jobs:
         with:
           node-version: 24
           cache: pnpm
-      # 标准应用默认消费已发布的组件库；本地链接仅用于开发。
-      - run: pnpm install --frozen-lockfile --config.overrides=null
+          cache-dependency-path: |
+            admin-ui/pnpm-lock.yaml
+            admin-react/pnpm-lock.yaml
+
+      - run: pnpm install --frozen-lockfile
+        working-directory: admin-ui
+      - run: pnpm build:lib
+        working-directory: admin-ui
+
+      - run: pnpm install --frozen-lockfile
+        working-directory: admin-react
       # check = 格式检查 + 类型 + lint + 单元测试 + 生产构建
       - run: pnpm check
+        working-directory: admin-react
+
       - run: pnpm exec playwright install --with-deps chromium
+        working-directory: admin-react
       - run: pnpm test:e2e
+        working-directory: admin-react
+
       - if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
-          path: test-results/
+          path: admin-react/test-results/
           retention-days: 7
