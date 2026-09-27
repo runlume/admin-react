@@ -2,7 +2,7 @@ import type { ColumnDef } from '@tanstack/react-table'
 import { useTranslation } from 'react-i18next'
 import { DataTable } from '@runlume/admin-ui/components/data-table'
 import { PageHeader } from '@runlume/admin-ui/components/page'
-import { auditLogs, type AuditLog } from '@/pages/sample-data'
+import { auditLogs, type AuditLog } from '@/lib/sample-data'
 
 /**
  * 操作日志：后台菜单里带 `example.admin.audit.view` 才可见；没有权限的用户直接访问这里会落到 403。

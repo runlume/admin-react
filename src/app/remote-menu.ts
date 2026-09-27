@@ -9,8 +9,8 @@ import {
   visibleMenuItems,
   type NormalizedRemoteMenu,
   type RemoteRoute,
-} from '@/lib/remote-menu'
-import { remoteMenuSample } from '@/pages/sample-data'
+} from '@/features/remote-menu/normalize'
+import { remoteMenuSample } from '@/lib/sample-data'
 
 export type AppMenu = {
   /** 本地菜单 + 后台菜单（后台菜单在后，分组同理） */

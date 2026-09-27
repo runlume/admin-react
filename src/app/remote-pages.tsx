@@ -6,33 +6,41 @@ import { ErrorState, LoadingState } from '@runlume/admin-ui/components/page'
 /**
  * 动态路由的组件表。
  *
- * 只有本仓库 `src/pages/**\/*-page.tsx` 里的文件参与动态路由——接口给的组件键
- * 命中不了就渲染错误态，**永远不会**根据接口内容去加载任意模块。
+ * 约定：后台菜单里的 `component` 指向本仓库 `src/features/<域>/page.tsx`；
+ * 也兼容 `audit-page` 这类带 `-page` 后缀的历史写法（先去后缀再找目录）。
+ * 只有本仓库的页面文件参与动态路由——接口给的组件键命中不了就渲染错误态，
+ * **永远不会**根据接口内容去加载任意模块。
  */
-const pageModules = import.meta.glob('../pages/**/*-page.tsx')
+const pageModules = import.meta.glob(['../features/**/page.tsx', '../features/**/*-page.tsx'])
 
-/** lazy() 每次调用都会产生新组件并触发重挂载，这里按组件键缓存。 */
+/** lazy() 每次调用都会产生新组件并触发重挂载，这里按解析出的模块键缓存。 */
 const pageCache = new Map<string, ComponentType | null>()
 
-function pageKey(component: string): string {
+/** 组件键 → 候选模块路径：先按 `<域>/page.tsx`，再兼容历史的 `<名>-page.tsx`。 */
+function candidateKeys(component: string): string[] {
   const name = component
     .trim()
     .replace(/^@\//, '')
     .replace(/^\.?\//, '')
-    .replace(/^pages\//, '')
+    .replace(/^(pages|features)\//, '')
     .replace(/\.tsx$/, '')
-  return `../pages/${name}.tsx`
+  const domain = name.replace(/-page$/, '')
+  return [
+    `../features/${domain}/page.tsx`,
+    `../features/${name}.tsx`,
+    `../features/${name}-page.tsx`,
+  ]
 }
 
 function resolveRemotePage(component: string): ComponentType | undefined {
-  const key = pageKey(component)
-  const cached = pageCache.get(key)
-  if (cached !== undefined) return cached ?? undefined
-  const loader = pageModules[key]
-  if (!loader) {
-    pageCache.set(key, null)
+  const key = candidateKeys(component).find((candidate) => pageModules[candidate])
+  const loader = key ? pageModules[key] : undefined
+  if (!key || !loader) {
+    pageCache.set(component, null)
     return undefined
   }
+  const cached = pageCache.get(key)
+  if (cached !== undefined) return cached ?? undefined
   const Page = lazy(async () => {
     const module = (await loader()) as Record<string, unknown>
     // 页面统一用命名导出（`export function XxxPage`），取第一个以 Page 结尾的导出。

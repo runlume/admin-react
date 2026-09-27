@@ -19,7 +19,7 @@ import { Input } from '@runlume/admin-ui/ui/input'
 import { InputOTP } from '@runlume/admin-ui/ui/input-otp'
 import { Label } from '@runlume/admin-ui/ui/label'
 import { Textarea } from '@runlume/admin-ui/ui/textarea'
-import { customers } from '@/pages/sample-data'
+import { customers } from '@/lib/sample-data'
 import type { DateRange } from '@runlume/admin-ui/lib/range'
 import { Section, DesignHeader } from './section'
 

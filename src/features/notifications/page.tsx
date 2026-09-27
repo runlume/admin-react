@@ -36,7 +36,7 @@ import {
   unreadCount,
   useNotifications,
   type AppNotification,
-} from '@/lib/notifications'
+} from '@/features/notifications/store'
 import { cn } from '@runlume/admin-ui/lib/utils'
 
 const readStates = ['all', 'unread', 'read'] as const

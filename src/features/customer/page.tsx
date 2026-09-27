@@ -35,8 +35,8 @@ import { MultiSelect } from '@runlume/admin-ui/components/multi-select'
 import { StorageBox } from '@runlume/admin-ui/components/storage-box'
 import type { DateRange } from '@runlume/admin-ui/lib/range'
 import { DropdownMenuItem } from '@runlume/admin-ui/ui/dropdown-menu'
-import { CustomerFormDialog } from '@/pages/customer-form-dialog'
-import { customers as seed, statusOptions, type Customer } from '@/pages/sample-data'
+import { CustomerFormDialog } from '@/features/customer/form-dialog'
+import { customers as seed, statusOptions, type Customer } from '@/lib/sample-data'
 
 const pageSizeOptions = [10, 20, 50] as const
 

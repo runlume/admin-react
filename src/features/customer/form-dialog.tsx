@@ -16,7 +16,7 @@ import { Input } from '@runlume/admin-ui/ui/input'
 import { Label } from '@runlume/admin-ui/ui/label'
 import { NativeSelect } from '@runlume/admin-ui/ui/native-select'
 import { Textarea } from '@runlume/admin-ui/ui/textarea'
-import type { Customer } from '@/pages/sample-data'
+import type { Customer } from '@/lib/sample-data'
 
 const schema = z.object({
   name: z.string().trim().min(1),

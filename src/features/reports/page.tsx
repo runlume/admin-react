@@ -9,7 +9,7 @@ import { PageHeader } from '@runlume/admin-ui/components/page'
 import { Sparkline } from '@runlume/admin-ui/components/sparkline'
 import { StatusBadge } from '@runlume/admin-ui/components/status-badge'
 import { Trend } from '@runlume/admin-ui/components/trend'
-import { customers, orders } from '@/pages/sample-data'
+import { customers, orders } from '@/lib/sample-data'
 
 type Row = {
   id: string

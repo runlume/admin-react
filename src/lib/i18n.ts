@@ -199,7 +199,7 @@ export const zhResources = {
   docsSite: '文档站',
   remoteMenu: {
     unknownComponent:
-      '页面组件「{{component}}」不在本地注册表里，请先在 src/pages 下创建对应的 *-page.tsx。',
+      '页面组件「{{component}}」不在本地注册表里，请先在 src/features/<域>/page.tsx 下创建对应页面。',
   },
   externalFrame: {
     open: '在新窗口打开',
@@ -603,7 +603,7 @@ export const zhResources = {
     reportsDescription: '客户贡献与订单金额的统计视图。',
     dynamicRouteTitle: '这是一个动态路由页面',
     dynamicRouteDescription:
-      '路径、组件与权限都来自后台菜单（示例见 src/pages/sample-data.ts 的 remoteMenuSample），本地只负责注册组件。',
+      '路径、组件与权限都来自后台菜单（示例见 src/lib/sample-data.ts 的 remoteMenuSample），本地只负责注册组件。',
     reportRevenue: '订单金额',
     reportOrders: '订单数',
     reportAverage: '平均客单价',
@@ -819,7 +819,7 @@ const en: typeof zhResources = {
   docsSite: 'Documentation',
   remoteMenu: {
     unknownComponent:
-      'Page component "{{component}}" is not registered locally. Create the matching *-page.tsx under src/pages first.',
+      'Page component "{{component}}" is not registered locally. Create the matching src/features/<domain>/page.tsx first.',
   },
   externalFrame: {
     open: 'Open in new window',
@@ -1235,7 +1235,7 @@ const en: typeof zhResources = {
     reportsDescription: 'Contribution by customer and order amounts.',
     dynamicRouteTitle: 'This page is a dynamic route',
     dynamicRouteDescription:
-      'Path, component and permission all come from the backend menu (see remoteMenuSample in src/pages/sample-data.ts); the app only registers components locally.',
+      'Path, component and permission all come from the backend menu (see remoteMenuSample in src/lib/sample-data.ts); the app only registers components locally.',
     reportRevenue: 'Revenue',
     reportOrders: 'Orders',
     reportAverage: 'Average order value',

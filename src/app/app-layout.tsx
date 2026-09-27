@@ -8,7 +8,7 @@ import { PageReloadButton } from '@runlume/admin-ui/components/page-reload-butto
 import { NotificationsButton } from '@runlume/admin-ui/components/notifications-button'
 import { Brand } from '@/components/brand'
 import { brandInfo } from '@/lib/brand-info'
-import { unreadCount, useNotifications } from '@/lib/notifications'
+import { unreadCount, useNotifications } from '@/features/notifications/store'
 import { appShortcuts } from '@/lib/shortcuts'
 import { AboutPanel } from '@runlume/admin-ui/components/about-panel'
 import { groupNavigation } from '@runlume/admin-ui/lib/navigation'

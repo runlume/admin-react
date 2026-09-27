@@ -12,18 +12,23 @@
 
 ## 2. 结构与接线
 
-| 位置                     | 约定                                                                 |
-| ------------------------ | -------------------------------------------------------------------- |
-| `src/App.tsx`            | 新页面必须同时登记路由与菜单；受权限保护的页面套 `RequirePermission` |
-| `src/app/navigation.ts`  | 一级路由在 `navigation`，分组归属在 `navigationGroups`               |
-| `src/app/app-layout.tsx` | 外壳接线只做接线：菜单、顶栏操作、用户菜单、设置弹窗                 |
-| `src/app/session.ts`     | 演示会话；接真实身份服务时替换实现，保持 `AppSession` 形状           |
-| `src/lib/i18n.ts`        | 先合并组件库的 `shellZh` / `shellEn`，本应用文案覆盖同名 key         |
-| `src/lib/shortcuts.ts`   | 默认快捷键登记表，传给 `UserSettings.shortcutDefaults`               |
+目录结构对齐平台前端：页面一律进 `src/features/<域>/page.tsx`，域内逻辑与页面同目录，
+跨域共享的放 `src/lib/`；单测按域分在 `src/test/unit/<域>/`，浏览器用例在 `src/test/e2e/`。
+后台菜单的动态路由按这个约定解析组件（`component: 'audit'` → `src/features/audit/page.tsx`）。
+
+| 位置                                    | 约定                                                                 |
+| --------------------------------------- | -------------------------------------------------------------------- |
+| `src/App.tsx`                           | 新页面必须同时登记路由与菜单；受权限保护的页面套 `RequirePermission` |
+| `src/app/navigation.ts`                 | 一级路由在 `navigation`，分组归属在 `navigationGroups`               |
+| `src/app/app-layout.tsx`                | 外壳接线只做接线：菜单、顶栏操作、用户菜单、设置弹窗                 |
+| `src/app/session.ts`                    | 演示会话；接真实身份服务时替换实现，保持 `AppSession` 形状           |
+| `src/features/remote-menu/normalize.ts` | 后台菜单归一（纯逻辑），动态路由组件按 `features/<域>/page.tsx` 解析 |
+| `src/lib/i18n.ts`                       | 先合并组件库的 `shellZh` / `shellEn`，本应用文案覆盖同名 key         |
+| `src/lib/shortcuts.ts`                  | 默认快捷键登记表，传给 `UserSettings.shortcutDefaults`               |
 
 ## 3. 数据与演示
 
-- `src/pages/sample-data.ts` 与 `src/lib/notifications.ts` 里的内容是**演示数据**，接入真实接口时
+- `src/lib/sample-data.ts` 与 `src/features/notifications/store.ts` 里的内容是**演示数据**，接入真实接口时
   整体替换；不要在演示数据上继续堆业务逻辑。
 - 通知、客户等页面的加载/空/错误/无权限四态必须齐；空状态用组件库的 `EmptyState`。
 - 组件库的偏好（外观、无障碍、通知偏好）已经按浏览器持久化，应用不要重复存一份。

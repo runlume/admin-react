@@ -7,7 +7,7 @@ import { Sparkline } from '@runlume/admin-ui/components/sparkline'
 import { Trend } from '@runlume/admin-ui/components/trend'
 import { Card, CardContent, CardHeader, CardTitle } from '@runlume/admin-ui/ui/card'
 import { StatusBadge } from '@runlume/admin-ui/components/status-badge'
-import { customers, orders } from '@/pages/sample-data'
+import { customers, orders } from '@/lib/sample-data'
 
 /** 工作台：标准后台的默认落地页，指标 → 待办 → 快捷入口。 */
 export function DashboardPage() {

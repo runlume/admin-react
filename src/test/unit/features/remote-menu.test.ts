@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { normalizeRemoteMenu, remoteRoutes, visibleMenuItems } from '@/lib/remote-menu'
+import {
+  normalizeRemoteMenu,
+  remoteRoutes,
+  visibleMenuItems,
+} from '@/features/remote-menu/normalize'
 
 const payload = {
   groups: [

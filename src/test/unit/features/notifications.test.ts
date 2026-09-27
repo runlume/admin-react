@@ -1,5 +1,9 @@
 import { beforeEach, describe, expect, it } from 'vitest'
-import { defaultNotificationPreferences, unreadCount, useNotifications } from '@/lib/notifications'
+import {
+  defaultNotificationPreferences,
+  unreadCount,
+  useNotifications,
+} from '@/features/notifications/store'
 
 const initialItems = useNotifications.getState().items
 const unreadIds = initialItems.filter((item) => !item.read).map((item) => item.id)

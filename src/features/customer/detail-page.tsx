@@ -10,7 +10,7 @@ import { StatusBadge } from '@runlume/admin-ui/components/status-badge'
 import { Button } from '@runlume/admin-ui/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '@runlume/admin-ui/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@runlume/admin-ui/ui/tabs'
-import { customers, orders, type Order } from '@/pages/sample-data'
+import { customers, orders, type Order } from '@/lib/sample-data'
 
 /**
  * 标准详情页：页头返回与操作、关键信息描述列表、页签内的从属数据。

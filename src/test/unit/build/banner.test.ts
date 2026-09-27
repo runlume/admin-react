@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest'
-import { bannerPrintedFlag, displayWidth, printBanner, renderBanner } from '../../../scripts/banner'
+import { bannerPrintedFlag, displayWidth, printBanner, renderBanner } from '../../../../scripts/banner'
 
 describe('终端品牌横幅', () => {
   it('带品牌、站点与当前使用版本', () => {

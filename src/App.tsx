@@ -14,78 +14,80 @@ import { PAGE_RELOAD_PATH } from '@runlume/admin-ui/components/page-reload-butto
 import { PageReloadRoute } from '@runlume/admin-ui/components/page-reload-route'
 import { RouteError } from '@runlume/admin-ui/components/route-error'
 import { trackPageview } from '@/lib/analytics'
-import type { RemoteRoute } from '@/lib/remote-menu'
-import { DashboardPage } from '@/pages/dashboard-page'
-import { ExternalFramePage } from '@/pages/external-frame-page'
+import type { RemoteRoute } from '@/features/remote-menu/normalize'
+import { DashboardPage } from '@/features/home/page'
+import { ExternalFramePage } from '@/features/external-frame/page'
 
 const LoginPage = lazy(() =>
-  import('@/pages/login-page').then((module) => ({ default: module.LoginPage })),
+  import('@/features/auth/login-page').then((module) => ({ default: module.LoginPage })),
 )
 const RegisterPage = lazy(() =>
-  import('@/pages/register-page').then((module) => ({ default: module.RegisterPage })),
+  import('@/features/auth/register-page').then((module) => ({ default: module.RegisterPage })),
 )
 const ForgotPasswordPage = lazy(() =>
-  import('@/pages/forgot-password-page').then((module) => ({
+  import('@/features/auth/forgot-password-page').then((module) => ({
     default: module.ForgotPasswordPage,
   })),
 )
 const CustomersPage = lazy(() =>
-  import('@/pages/customers-page').then((module) => ({ default: module.CustomersPage })),
+  import('@/features/customer/page').then((module) => ({ default: module.CustomersPage })),
 )
 const CustomerDetailPage = lazy(() =>
-  import('@/pages/customer-detail-page').then((module) => ({ default: module.CustomerDetailPage })),
+  import('@/features/customer/detail-page').then((module) => ({
+    default: module.CustomerDetailPage,
+  })),
 )
 const SettingsPage = lazy(() =>
-  import('@/pages/settings-page').then((module) => ({ default: module.SettingsPage })),
+  import('@/features/settings/page').then((module) => ({ default: module.SettingsPage })),
 )
 const NotificationsPage = lazy(() =>
-  import('@/pages/notifications-page').then((module) => ({
+  import('@/features/notifications/page').then((module) => ({
     default: module.NotificationsPage,
   })),
 )
 const designPages = {
   overview: lazy(() =>
-    import('@/pages/design-system/overview-page').then((module) => ({
+    import('@/features/design-system/overview-page').then((module) => ({
       default: module.DesignOverviewPage,
     })),
   ),
   basic: lazy(() =>
-    import('@/pages/design-system/basic-page').then((module) => ({
+    import('@/features/design-system/basic-page').then((module) => ({
       default: module.DesignBasicPage,
     })),
   ),
   form: lazy(() =>
-    import('@/pages/design-system/form-page').then((module) => ({
+    import('@/features/design-system/form-page').then((module) => ({
       default: module.DesignFormPage,
     })),
   ),
   data: lazy(() =>
-    import('@/pages/design-system/data-page').then((module) => ({
+    import('@/features/design-system/data-page').then((module) => ({
       default: module.DesignDataPage,
     })),
   ),
   feedback: lazy(() =>
-    import('@/pages/design-system/feedback-page').then((module) => ({
+    import('@/features/design-system/feedback-page').then((module) => ({
       default: module.DesignFeedbackPage,
     })),
   ),
   navigation: lazy(() =>
-    import('@/pages/design-system/navigation-page').then((module) => ({
+    import('@/features/design-system/navigation-page').then((module) => ({
       default: module.DesignNavigationPage,
     })),
   ),
   metrics: lazy(() =>
-    import('@/pages/design-system/metrics-page').then((module) => ({
+    import('@/features/design-system/metrics-page').then((module) => ({
       default: module.DesignMetricsPage,
     })),
   ),
   icons: lazy(() =>
-    import('@/pages/design-system/icons-page').then((module) => ({
+    import('@/features/design-system/icons-page').then((module) => ({
       default: module.DesignIconsPage,
     })),
   ),
   theme: lazy(() =>
-    import('@/pages/design-system/theme-page').then((module) => ({
+    import('@/features/design-system/theme-page').then((module) => ({
       default: module.DesignThemePage,
     })),
   ),
